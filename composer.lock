@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78c8b45fdc244fc56236e06a0b697e23",
+    "content-hash": "f77d77f35505a0e97624a94d48388ba3",
     "packages": [
         {
             "name": "brick/math",
@@ -547,16 +547,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v10.46.0",
+            "version": "v10.47.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "96d4512df39bee8cb60d50783f944a48242ea862"
+                "reference": "a98f849a2a0f36fbcbec77d07cae680e240ccdc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/96d4512df39bee8cb60d50783f944a48242ea862",
-                "reference": "96d4512df39bee8cb60d50783f944a48242ea862",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/a98f849a2a0f36fbcbec77d07cae680e240ccdc1",
+                "reference": "a98f849a2a0f36fbcbec77d07cae680e240ccdc1",
                 "shasum": ""
             },
             "require": {
@@ -614,7 +614,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-02-26T22:20:06+00:00"
+            "time": "2024-03-02T00:22:09+00:00"
         },
         {
             "name": "nesbot/carbon",

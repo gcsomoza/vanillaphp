@@ -568,17 +568,17 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v10.46.0",
-            "version_normalized": "10.46.0.0",
+            "version": "v10.47.0",
+            "version_normalized": "10.47.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "96d4512df39bee8cb60d50783f944a48242ea862"
+                "reference": "a98f849a2a0f36fbcbec77d07cae680e240ccdc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/96d4512df39bee8cb60d50783f944a48242ea862",
-                "reference": "96d4512df39bee8cb60d50783f944a48242ea862",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/a98f849a2a0f36fbcbec77d07cae680e240ccdc1",
+                "reference": "a98f849a2a0f36fbcbec77d07cae680e240ccdc1",
                 "shasum": ""
             },
             "require": {
@@ -606,7 +606,7 @@
                 "symfony/var-dumper": "Required to use the dd function (^6.2).",
                 "vlucas/phpdotenv": "Required to use the Env class and env helper (^5.4.1)."
             },
-            "time": "2024-02-26T22:20:06+00:00",
+            "time": "2024-03-02T00:22:09+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {

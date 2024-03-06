@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'd76a0b4d62801548ba905da2a6bb9de0ba948192',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'd76a0b4d62801548ba905da2a6bb9de0ba948192',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -101,9 +101,9 @@
             'dev_requirement' => false,
         ),
         'illuminate/support' => array(
-            'pretty_version' => 'v10.46.0',
-            'version' => '10.46.0.0',
-            'reference' => '96d4512df39bee8cb60d50783f944a48242ea862',
+            'pretty_version' => 'v10.47.0',
+            'version' => '10.47.0.0',
+            'reference' => 'a98f849a2a0f36fbcbec77d07cae680e240ccdc1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../illuminate/support',
             'aliases' => array(),

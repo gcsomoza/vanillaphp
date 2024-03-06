@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Container\Container;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Support\Facades\Facade;
 
 class VanillaPHP {
     /**
@@ -36,6 +38,7 @@ class VanillaPHP {
     }
 
     public static function setupEloquentDB() {
+        $container = new Container();
         $capsule = new Capsule;
 
         $host = defined('DB_HOST') ? DB_HOST : 'localhost';
@@ -60,5 +63,8 @@ class VanillaPHP {
 
         $capsule->setAsGlobal();
         $capsule->bootEloquent();
+
+        $container->instance('db', $capsule);
+        Facade::setFacadeApplication($container);
     }
 }

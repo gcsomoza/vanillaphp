@@ -13,3 +13,26 @@ spl_autoload_register(function ($class) {
 VanillaPHP::require(BASE_PATH.'/vendor/autoload.php');
 VanillaPHP::require(BASE_PATH.'/config.php');
 VanillaPHP::setupEloquentDB();
+
+/**
+ * Includes a partial php view to another php view
+ */
+function partial($view, $data = []) {
+    VanillaPHP::view($view, $data);
+}
+
+/**
+ * Outputs the php view in the browser
+ */
+function view($view, $data = []) {
+    VanillaPHP::view($view, $data);
+    exit;
+}
+
+/**
+ * Outputs the data in json format in the browser
+ */
+function json_output($data) {
+    VanillaPHP::json($data);
+    exit;
+}

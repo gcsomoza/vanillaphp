@@ -4,19 +4,11 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 class VanillaPHP {
     /**
-     * Includes a partial php view to another php view
-     */
-    public static function partial($view, $data = []) {
-        extract($data);
-        include self::fixDirSep(BASE_PATH."/$view");
-    }
-
-    /**
-     * Outputs the php view file in the browser
+     * Includes a php view
      */
     public static function view($view, $data = []) {
-        self::partial($view, $data);
-        exit;
+        extract($data);
+        include self::fixDirSep(BASE_PATH."/$view");
     }
 
     /**

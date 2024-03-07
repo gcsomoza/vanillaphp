@@ -1,6 +1,0 @@
-{
-    "require": {
-        "illuminate/database": "^10.46",
-        "illuminate/support": "^10.47"
-    }
-}

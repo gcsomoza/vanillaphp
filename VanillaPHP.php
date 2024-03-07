@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Container\Container;
-use Illuminate\Database\Capsule\Manager as Capsule;
-use Illuminate\Support\Facades\Facade;
+use vanillaphp\Services\Database;
 
 class VanillaPHP {
     /**
@@ -35,36 +33,5 @@ class VanillaPHP {
         if ( file_exists($file) ) {
             require $file;
         }
-    }
-
-    public static function setupEloquentDB() {
-        $container = new Container();
-        $capsule = new Capsule;
-
-        $host = defined('DB_HOST') ? DB_HOST : 'localhost';
-        $port = defined('DB_PORT') ? DB_PORT : 3307;
-        $name = defined('DB_HOST') ? DB_NAME : '';
-        $user = defined('DB_USER') ? DB_USER : 'root';
-        $pass = defined('DB_PASS') ? DB_PASS : '';
-        $charset = defined('DB_CHARSET') ? DB_CHARSET : 'utf8';
-        $collation = defined('DB_COLLATION') ? DB_COLLATION : 'utf8_unicode_ci';
-
-        $capsule->addConnection([
-            'driver'    => 'mysql',
-            'host'      => $host,
-            'port'      => $port,
-            'database'  => $name,
-            'username'  => $user,
-            'password'  => $pass,
-            'charset'   => $charset,
-            'collation' => $collation,
-            'prefix'    => '',
-        ]);
-
-        $capsule->setAsGlobal();
-        $capsule->bootEloquent();
-
-        $container->instance('db', $capsule);
-        Facade::setFacadeApplication($container);
     }
 }

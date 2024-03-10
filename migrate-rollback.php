@@ -2,7 +2,6 @@
 require 'include.php';
 
 $migrations = scandir( VanillaPHP::fixDirSep(BASE_PATH.'/migrations') );
-var_dump($migrations); exit;
 
 //Sort $migrations from newest to oldest
 rsort($migrations);

@@ -33,17 +33,3 @@ function db() {
     }
     return $db;
 }
-
-/**
- * Prints php view
- */
-function view($view, $data = []) {
-    VanillaPHP::view($view, $data);
-}
-
-/**
- * Prints json string
- */
-function json($data) {
-    VanillaPHP::json($data);
-}

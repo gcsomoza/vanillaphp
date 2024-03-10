@@ -35,24 +35,15 @@ function db() {
 }
 
 /**
- * Includes a partial php view to another php view
- */
-function partial($view, $data = []) {
-    VanillaPHP::view($view, $data);
-}
-
-/**
- * Outputs the php view in the browser
+ * Prints php view
  */
 function view($view, $data = []) {
     VanillaPHP::view($view, $data);
-    exit;
 }
 
 /**
- * Outputs the data in json format in the browser
+ * Prints json string
  */
-function json_output($data) {
+function json($data) {
     VanillaPHP::json($data);
-    exit;
 }

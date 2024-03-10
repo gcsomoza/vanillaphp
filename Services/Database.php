@@ -1,7 +1,11 @@
 <?php
 namespace vanillaphp\Services;
 
+use vanillaphp\Services\Units\DatabaseUnit;
+
 class Database {
+    use DatabaseUnit;
+
     private static $db;
 
     public function __construct($host, $user, $pass, $name) {
@@ -14,55 +18,27 @@ class Database {
 
     public function query($sql, $params = []) {
         $stmt = self::$db->prepare($sql);
-        if ( count($params) > 0 )
-            $stmt->bind_param(implode('', array_fill(0, count($params), 's')), ...$params);
+        if ( count($params) > 0 ) {
+            $placeholders = $this->_bindParamPlaceholders($params);
+            $stmt->bind_param($placeholders, ...$params);
+        }
         $stmt->execute();
         return new DatabaseQuery($stmt->get_result());
     }
 
     public function insert($table, $data = []) {
-        $fields = [];
-        $placeholders = [];
-        $params = [];
-        foreach ($data as $field => $value) {
-            $fields[] = "`$field`";
-            $placeholders[] = '?';
-            $params[] = $value;
-        }
-        $fields = implode(',',$fields);
-        $placeholders = implode(',',$placeholders);
-        $sql = "INSERT INTO `$table` ($fields) VALUES($placeholders)";
+        $sql = $this->_insert($table, $data);
         $this->query($sql, $params);
         return $this->insertID();
     }
 
     public function update($table, $data = [], $where = []) {
-        $fields = [];
-        $params = [];
-        foreach ($data as $field => $value) {
-            $fields[] = "`$field` = ?";
-            $params[] = $value;
-        }
-        $fields = implode(',',$fields);
-        $whereClause = [];
-        foreach ($where as $field => $value) {
-            $whereClause[] = "`$field` = ?";
-            $params[] = $value;
-        }
-        $whereClause = implode(' AND ',$whereClause);
-        $sql = "UPDATE `$table` SET $fields WHERE $whereClause";
+        $sql = $this->_update($table, $data, $where);
         $this->query($sql, $params);
     }
 
     public function delete($table, $where = []) {
-        $params = [];
-        $whereClause = [];
-        foreach ($where as $field => $value) {
-            $whereClause[] = "`$field` = ?";
-            $params[] = $value;
-        }
-        $whereClause = implode(' AND ',$whereClause);
-        $sql = "DELETE FROM `$table` WHERE $whereClause";
+        $sql = $this->_delete($table, $where);
         $this->query($sql, $params);
     }
 

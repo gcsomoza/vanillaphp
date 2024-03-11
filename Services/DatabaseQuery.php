@@ -4,10 +4,10 @@ namespace vanillaphp\Services;
 class DatabaseQuery {
     public function __construct(private $query) {}
 
-    public function result() {
+    public function result($ModelClass = null) {
         $rows = [];
         while($object = $this->query->fetch_object()) {
-            $rows[] = $object;
+            $rows[] = $ModelClass === null ? $object : new $ModelClass($object);
         }
         return $rows;
     }

@@ -14,7 +14,7 @@ class VanillaPHP {
     /**
      * Outputs the data in json format in the browser
      */
-    public static function json($data) {
+    public static function jsonOutput($data) {
         header('Content-Type: application/json; charset=utf-8');
         echo json_encode($data);
         exit;

@@ -33,3 +33,24 @@ function db() {
     }
     return $db;
 }
+
+/**
+ * Includes a php view
+ */
+function view(string $view, array $data = []) {
+    VanillaPHP::view($view, $data);
+}
+
+/**
+ * Outputs the data in json format in the browser
+ */
+function json_output(mixed $data) {
+    VanillaPHP::jsonOutput($data);
+}
+
+/**
+ * Defends a string against xss attack
+ */
+function h($str) {
+    return nl2br(htmlspecialchars($str??''));
+}

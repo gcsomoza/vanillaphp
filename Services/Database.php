@@ -28,13 +28,13 @@ class Database {
 
     public function insert($table, $data = []) {
         $sql = $this->_insert($table, $data);
-        $this->query($sql, $params);
+        $this->query($sql, $data);
         return $this->insertID();
     }
 
     public function update($table, $data = [], $where = []) {
         $sql = $this->_update($table, $data, $where);
-        $this->query($sql, $params);
+        $this->query($sql, $data);
     }
 
     public function delete($table, $where = []) {

@@ -35,7 +35,7 @@ class Database {
 
     public function update($table, $data = [], $where = []) {
         $sql = $this->_update($table, $data, $where);
-        $this->query($sql, $data);
+        $this->query($sql, array_merge($data, $where));
     }
 
     public function delete($table, $where = []) {

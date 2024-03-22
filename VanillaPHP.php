@@ -12,6 +12,13 @@ class VanillaPHP {
     }
 
     /**
+     * Get json input from request
+     */
+    public static function jsonInput() {
+        return json_decode(file_get_contents('php://input'));
+    }
+
+    /**
      * Outputs the data in json format in the browser
      */
     public static function jsonOutput($data) {

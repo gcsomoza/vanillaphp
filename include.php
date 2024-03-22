@@ -42,6 +42,13 @@ function view(string $view, array $data = []) {
 }
 
 /**
+ * Get json input from request
+ */
+function json_input() {
+    return VanillaPHP::jsonInput();
+}
+
+/**
  * Outputs the data in json format in the browser
  */
 function json_output(mixed $data) {

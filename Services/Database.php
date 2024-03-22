@@ -20,7 +20,8 @@ class Database {
         $stmt = self::$db->prepare($sql);
         if ( count($params) > 0 ) {
             $placeholders = $this->_bindParamPlaceholders($params);
-            $stmt->bind_param($placeholders, ...$params);
+            $values = array_values($params);
+            $stmt->bind_param($placeholders, ...$values);
         }
         $stmt->execute();
         return new DatabaseQuery($stmt->get_result());

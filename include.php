@@ -61,3 +61,11 @@ function json_output(mixed $data) {
 function h($str) {
     return nl2br(htmlspecialchars($str??''));
 }
+
+function GET($key, $default = '') {
+    return VanillaPHP::get($key, $default);
+}
+
+function POST($key, $default = '') {
+    return VanillaPHP::post($key, $default);
+}

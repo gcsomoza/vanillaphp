@@ -41,4 +41,19 @@ class VanillaPHP {
             require $file;
         }
     }
+
+    private static function sanitize($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    public static function get($key, $default = '') {
+        return self::sanitize($_GET[$key] ?? $default);
+    }
+
+    public static function post($key, $default = '') {
+        return self::sanitize($_POST[$key] ?? $default);
+    }
 }
